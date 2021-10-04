@@ -13,8 +13,8 @@ const todoModel = {
         fs.writeFileSync(path.join(__dirname, "./todo.json"), JSON.stringify(db), {encoding:"utf-8"})
         return true
     },
-    getChoreById: function(id, chore) {
-        const choreId = todoModel.getAllChores(id).findIndex(item => item.id == choreId)
+    getChoreById: function(chore, id) {
+        const choreId = todoModel.getAllChores().findIndex(item=> item.id == id)
         const newChore = chore
         const db = todoModel.getAllChores()
         db[choreId] = {
